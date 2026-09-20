@@ -40,8 +40,15 @@ def retrieve(
         3. Gộp bảng xếp hạng bằng RRF đúng một lần (nếu use_reranking=True).
     """
     candidate_k = max(top_k * 2, top_k)
-    dense_results = semantic_search(query, top_k=candidate_k)
-    sparse_results = lexical_search(query, top_k=candidate_k)
+    try:
+        dense_results = semantic_search(query, top_k=candidate_k)
+    except Exception:
+        dense_results = []
+
+    try:
+        sparse_results = lexical_search(query, top_k=candidate_k)
+    except Exception:
+        sparse_results = []
 
     best_dense_score = dense_results[0]["score"] if dense_results else 0.0
 

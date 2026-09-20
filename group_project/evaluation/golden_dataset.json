@@ -1,0 +1,77 @@
+[
+  {
+    "question": "Quy định mới của Bộ Giáo dục và Đào tạo về các đợt xét tuyển sớm tại các trường đại học như thế nào?",
+    "expected_answer": "Bộ Giáo dục và Đào tạo quy định bỏ xét tuyển sớm. Các đại học vẫn có thể sử dụng các phương thức như xét học bạ, đánh giá năng lực, tư duy, chứng chỉ quốc tế nhưng phải xét chung đợt với điểm thi tốt nghiệp THPT và quy đổi điểm giữa các phương thức, tổ hợp về một thang điểm chung theo nguyên tắc của Bộ.",
+    "expected_context": "Một trong những điểm mới so với trước là bỏ xét tuyển sớm. Đây là các đợt tuyển sinh trước kỳ thi tốt nghiệp THPT, phổ biến là xét học bạ, điểm thi đánh giá năng lực, tư duy, chứng chỉ quốc tế... Năm nay, các đại học vẫn có thể dùng những phương thức này, nhưng phải xét chung đợt với điểm thi tốt nghiệp, đồng thời quy đổi điểm giữa các phương thức, tổ hợp về thang chung."
+  },
+  {
+    "question": "Bộ Giáo dục và Đào tạo quy định mức điểm cộng khuyến khích và điểm thưởng đối với chứng chỉ ngoại ngữ tối đa là bao nhiêu?",
+    "expected_answer": "Bộ Giáo dục và Đào tạo quy định điểm cộng khuyến khích và điểm thưởng cho thí sinh có thành tích đặc biệt hoặc có chứng chỉ ngoại ngữ không được vượt quá 10% mức tối đa của thang điểm xét (ví dụ tối đa 3 điểm trên thang 30). Đồng thời, tổng điểm xét tuyển bao gồm cả điểm cộng và ưu tiên không được vượt quá mức tối đa của thang điểm.",
+    "expected_context": "Ngoài ra, Bộ lần đầu quy định điểm cộng khuyến khích, điểm thưởng với thí sinh có thành tích đặc biệt hay có chứng chỉ ngoại ngữ, không được vượt quá 10% mức tối đa của thang điểm xét, ví dụ tối đa 3 điểm trên thang 30. Đồng thời, các trường phải đảm bảo không có thí sinh nào có điểm xét tuyển (bao gồm cả điểm cộng và điểm ưu tiên khu vực, đối tượng) vượt quá mức tối đa."
+  },
+  {
+    "question": "Theo quy chế của Bộ Giáo dục và Đào tạo, tổ hợp xét tuyển đại học phải đáp ứng những điều kiện bắt buộc nào?",
+    "expected_answer": "Tổ hợp xét tuyển phải gồm ít nhất ba môn phù hợp với đặc điểm của chương trình đào tạo, trong đó môn Toán hoặc Ngữ văn là bắt buộc với trọng số tính điểm không dưới 25%. Trường hợp quy đổi chứng chỉ ngoại ngữ thành điểm môn học thì trọng số không quá 50%. Nếu xét học bạ, phải dùng kết quả học tập cả năm lớp 12 với trọng số không dưới 25%.",
+    "expected_context": "Với tổ hợp xét tuyển, Bộ không giới hạn số lượng, nhưng yêu cầu phải gồm ít nhất ba môn, phù hợp với đặc điểm, yêu cầu của chương trình đào tạo. Trong đó, Toán hoặc Ngữ văn là bắt buộc, với trọng số tính điểm không dưới 25%... Các đại học được quy đổi chứng chỉ ngoại ngữ thành điểm môn này để đưa vào tổ hợp xét tuyển, nhưng trọng số không quá 50%. Trường hợp xét học bạ, các trường phải dùng kết quả học tập cả năm lớp 12 với trọng số không dưới 25%."
+  },
+  {
+    "question": "Thí sinh thuộc diện xét tuyển thẳng có được xác nhận nhập học sớm trực tiếp với các trường đại học không?",
+    "expected_answer": "Không. Thí sinh được xét tuyển thẳng không được xác nhận nhập học sớm như trước mà vẫn phải đăng ký nguyện vọng trên hệ thống xét tuyển chung theo kế hoạch của Bộ Giáo dục và Đào tạo. Các trường không được yêu cầu nhóm thí sinh này cam kết hoặc xác nhận nhập học sớm.",
+    "expected_context": "Một điểm mới đáng chú ý khác là thí sinh được xét tuyển thẳng không được xác nhận nhập học sớm như trước. Các em vẫn phải đăng ký nguyện vọng trên hệ thống theo kế hoạch chung của Bộ. Các trường không được yêu cầu nhóm này cam kết hay xác nhận nhập học sớm."
+  },
+  {
+    "question": "Năm 2025, Đại học Kinh tế Quốc dân tuyển sinh tổng cộng bao nhiêu sinh viên và có những chương trình đào tạo mới nào?",
+    "expected_answer": "Năm 2025, Đại học Kinh tế Quốc dân tuyển 8.500 sinh viên (gồm 8.200 chỉ tiêu hệ đại học chính quy và 300 chỉ tiêu liên thông), tăng 550 chỉ tiêu so với năm trước. Trường mở hai chương trình đào tạo mới là Quan hệ lao động và Luật thương mại quốc tế.",
+    "expected_context": "Năm 2025, Đại học Kinh tế Quốc dân (NEU) tuyển 8.500 sinh viên, tăng 550 so với năm ngoái... trong 8.500 chỉ tiêu, 8.200 dành cho hệ đại học chính quy, còn lại cho hệ liên thông. Trường tuyển 73 ngành với gần 90 chương trình, trong đó có hai chương trình mới là Quan hệ lao động và Luật thương mại quốc tế."
+  },
+  {
+    "question": "Ngưỡng đảm bảo chất lượng đầu vào (điểm sàn) theo kết quả thi tốt nghiệp THPT của Đại học Kinh tế Quốc dân năm 2025 là bao nhiêu?",
+    "expected_answer": "Ngưỡng đảm bảo chất lượng đầu vào (điểm sàn) của Đại học Kinh tế Quốc dân theo phương thức xét kết quả thi tốt nghiệp THPT 2025 là 20 điểm đối với cả 4 tổ hợp gồm A00, A01, D01 và D07.",
+    "expected_context": "Hai là xét kết quả thi tốt nghiệp THPT 2025 với bốn tổ hợp, gồm A00 (Toán, Lý, Hóa), A01 (Toán, Lý, Tiếng Anh), D01 (Toán, Văn, Tiếng Anh), D07 (Toán, Hóa, Tiếng Anh). Ngưỡng đảm bảo chất lượng đầu vào (điểm sàn) với phương thức này là 20 điểm, như các năm gần đây."
+  },
+  {
+    "question": "Đối tượng nào thuộc nhóm 1 trong phương thức xét tuyển kết hợp của Đại học Kinh tế Quốc dân năm 2025?",
+    "expected_answer": "Nhóm 1 trong phương thức xét tuyển kết hợp của Đại học Kinh tế Quốc dân là những thí sinh có chứng chỉ quốc tế SAT từ 1200/1600 hoặc ACT từ 26/36 trở lên.",
+    "expected_context": "Ba là xét tuyển kết hợp, dành cho ba nhóm thí sinh. Nhóm 1 là những em có chứng chỉ quốc tế SAT từ 1200/1600 hoặc ACT 26/36 trở lên. Đây là hai bài thi chuẩn hóa phổ biến ở Mỹ."
+  },
+  {
+    "question": "Năm 2025, ngành học nào của Đại học Bách khoa Hà Nội có điểm chuẩn cao nhất theo điểm thi tốt nghiệp THPT?",
+    "expected_answer": "Ngành có điểm chuẩn cao nhất của Đại học Bách khoa Hà Nội năm 2025 là chương trình tiên tiến Khoa học dữ liệu và Trí tuệ nhân tạo với mức điểm chuẩn là 29,39 điểm. Cùng với Khoa học máy tính, đây là hai ngành lấy trên 29 điểm.",
+    "expected_context": "Điểm chuẩn Đại học Bách khoa Hà Nội (HUST) năm 2025 từ 19 đến 29,39, chương trình tiên tiến Khoa học dữ liệu và Trí tuệ nhân tạo cao nhất. PGS Vũ Duy Hải... cho biết có hai ngành lấy trên 29, xét theo điểm thi tốt nghiệp THPT, là Khoa học dữ liệu và Trí tuệ nhân tạo (chương trình tiên tiến) và Khoa học máy tính."
+  },
+  {
+    "question": "Tổng chỉ tiêu tuyển sinh của Đại học Bách khoa Hà Nội năm 2025 là bao nhiêu và gồm những phương thức nào?",
+    "expected_answer": "Năm 2025, Đại học Bách khoa Hà Nội tuyển 9.680 sinh viên. Các phương thức tuyển sinh gồm: xét tuyển tài năng, xét kết quả thi đánh giá tư duy (TSA), dựa vào điểm thi tốt nghiệp THPT, và diện cử tuyển, lưu học sinh.",
+    "expected_context": "Năm nay, trường tuyển 9.680 sinh viên. Các phương thức tuyển sinh gồm: xét tuyển tài năng, đánh giá tư duy, dựa vào điểm thi tốt nghiệp THPT và diện cử tuyển, lưu học sinh."
+  },
+  {
+    "question": "Mức học phí các chương trình đào tạo chuẩn của Đại học Bách khoa Hà Nội năm học 2025-2026 là bao nhiêu?",
+    "expected_answer": "Học phí chương trình chuẩn của Đại học Bách khoa Hà Nội năm học 2025-2026 thu ở mức khoảng 28-35 triệu đồng/năm (tổng học phí các hệ dao động từ 28 đến 90 triệu đồng/năm tùy chương trình đào tạo).",
+    "expected_context": "Học phí Đại học Bách khoa Hà Nội năm 2025-2026 là khoảng 28-90 triệu đồng, tăng 3-5 triệu đồng so với hiện nay. Trong đó, chương trình chuẩn thu mức 28-35 triệu đồng một năm."
+  },
+  {
+    "question": "Mô hình tuyển sinh A.A.C.C của trường Đại học VinUniversity đánh giá thí sinh qua những tiêu chí cốt lõi nào?",
+    "expected_answer": "Mô hình tuyển sinh A.A.C.C của VinUniversity lựa chọn sinh viên tài năng dựa trên 4 tiêu chí cốt lõi: (1) Năng lực vượt trội (Outstanding Abilities), (2) Khát vọng mãnh liệt (Strong Aspirations), (3) Tư duy sáng tạo (Creativity), và (4) Cam kết / Bản lĩnh hành động (Commitment).",
+    "expected_context": "The VinUniversity admissions process is designed to select talented students using the A.A.C.C. Model with: (1) Outstanding Abilities: Outstanding non-academic skills, analytical and problem-solving skills... (2) Strong Aspirations: An understanding of major issues in the local community... (3) Creativity: The ability to have a different mindset, high curiosity... (4) Commitment: Passion and determination."
+  },
+  {
+    "question": "Mã trường tuyển sinh và địa chỉ khuôn viên của trường Đại học VinUniversity là gì?",
+    "expected_answer": "Mã trường tuyển sinh của VinUniversity là VIN. Trường có địa chỉ tại Khu đô thị Vinhomes Ocean Park, xã Đa Tốn (phường Gia Lâm), Gia Lâm, Hà Nội.",
+    "expected_context": "Name of the Institution: VINUNIVERSITY. Institution's Code: VIN. Institution Address: Vinhomes Ocean Park Urban Area, Gia Lam Ward, Ha Noi."
+  },
+  {
+    "question": "Điểm chuẩn thấp nhất vào Đại học Bách khoa Hà Nội năm 2025 là bao nhiêu điểm và thuộc chương trình nào?",
+    "expected_answer": "Chương trình có điểm chuẩn thấp nhất vào Đại học Bách khoa Hà Nội năm 2025 là 19 điểm, thuộc ngành Quản trị kinh doanh hợp tác với Đại học Troy (Mỹ).",
+    "expected_context": "Với các ngành top dưới, điểm chuẩn chính thức khá sát so với mức trường dự báo hồi tháng 7. Chương trình có điểm chuẩn thấp nhất - 19 là Quản trị kinh doanh hợp tác với Đại học Troy (Mỹ)."
+  },
+  {
+    "question": "Quy trình xin visa du học Nhật Bản và chi phí sinh hoạt hàng tháng tại thành phố Tokyo là bao nhiêu?",
+    "expected_answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+    "expected_context": "Bộ tài liệu của hệ thống chỉ bao gồm quy chế tuyển sinh đại học Việt Nam, đề án tuyển sinh HUST, NEU, VinUni; không chứa thông tin về thủ tục xuất nhập cảnh hay visa du học Nhật Bản."
+  },
+  {
+    "question": "Lịch trình biểu diễn và giá vé các hạng ghế xem đêm nhạc quốc tế tại Sân vận động Quốc gia Mỹ Đình là bao nhiêu?",
+    "expected_answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+    "expected_context": "Cơ sở tri thức chỉ chứa dữ liệu tuyển sinh đại học, không chứa thông tin về các sự kiện giải trí hay biểu diễn âm nhạc."
+  }
+]
