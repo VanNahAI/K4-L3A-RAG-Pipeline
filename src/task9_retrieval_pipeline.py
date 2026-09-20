@@ -11,6 +11,7 @@ Luồng xử lý:
 Không so sánh threshold với RRF score vì hai thang đo khác nhau.
 """
 
+from src.contracts import SearchResult
 from .task5_semantic_search import semantic_search
 from .task6_lexical_search import lexical_search
 from .task7_reranking import rerank_rrf
@@ -26,27 +27,40 @@ def retrieve(
     top_k: int = DEFAULT_TOP_K,
     score_threshold: float = SCORE_THRESHOLD,
     use_reranking: bool = True,
-) -> list[dict]:
-    """Trả về hybrid hoặc pageindex SearchResult."""
-    # TODO: Implement full retrieval pipeline.
-    #
-    # dense = semantic_search(query, top_k=top_k * 2)
-    # sparse = lexical_search(query, top_k=top_k * 2)
-    # hybrid = (
-    #     rerank_rrf([dense, sparse], top_k=top_k)
-    #     if use_reranking else dense[:top_k]
-    # )
-    #
-    # best_dense_score = dense[0]["score"] if dense else 0.0
-    # if best_dense_score < score_threshold:
-    #     try:
-    #         fallback = pageindex_search(query, top_k=top_k)
-    #         if fallback:
-    #             return fallback
-    #     except Exception:
-    #         pass
-    # return hybrid[:top_k]
-    raise NotImplementedError("Implement retrieve")
+) -> list[SearchResult]:
+    """Trả về hybrid hoặc pageindex SearchResult.
+    
+    Luồng xử lý:
+        1. Chạy semantic_search và lexical_search để lấy candidate chunks.
+        2. Đánh giá độ tin cậy dựa trên cosine score gốc của dense retrieval:
+           - Nếu best_dense_score < score_threshold: query có thể out-of-domain
+             hoặc không khớp corpus -> thử PageIndex fallback.
+           - Nếu PageIndex trả kết quả, dùng kết quả đó.
+           - Nếu PageIndex gặp lỗi provider hoặc không có kết quả -> fallback về hybrid.
+        3. Gộp bảng xếp hạng bằng RRF đúng một lần (nếu use_reranking=True).
+    """
+    candidate_k = max(top_k * 2, top_k)
+    dense_results = semantic_search(query, top_k=candidate_k)
+    sparse_results = lexical_search(query, top_k=candidate_k)
+
+    best_dense_score = dense_results[0]["score"] if dense_results else 0.0
+
+    # Nếu score dưới threshold, thử PageIndex fallback trước
+    if best_dense_score < score_threshold:
+        try:
+            fallback = pageindex_search(query, top_k=top_k)
+            if fallback:
+                return fallback[:top_k]
+        except Exception:
+            # Nếu PageIndex provider lỗi, không crash mà tiếp tục dùng hybrid
+            pass
+
+    # Gộp thứ hạng bằng RRF đúng một lần
+    if use_reranking:
+        fused = rerank_rrf([dense_results, sparse_results], top_k=top_k)
+        return fused[:top_k]
+
+    return dense_results[:top_k]
 
 
 if __name__ == "__main__":
