@@ -1,15 +1,36 @@
 from typing import Literal, TypedDict
 
-
+# ---------------------------------------------------------------------------
+# Primitive aliases — import these in every task file instead of repeating
+# the literal strings, so a typo is caught at type-check time.
+# ---------------------------------------------------------------------------
+DocType = Literal["legal", "news"]
 RetrievalMethod = Literal["dense", "bm25", "hybrid", "pageindex"]
 RetrievalSource = Literal["hybrid", "pageindex", "none"]
 
+__all__ = [
+    "DocType",
+    "RetrievalMethod",
+    "RetrievalSource",
+    "DocumentMetadata",
+    "ChunkMetadata",
+    "Document",
+    "Chunk",
+    "EmbeddedChunk",
+    "EmbeddedDocument",
+    "SearchResult",
+    "GenerationResult",
+    "validate_document",
+    "validate_search_results",
+    "validate_generation_result",
+]
+
 
 class DocumentMetadata(TypedDict):
-    source: str
-    title: str
-    doc_type: str
-    url: str | None
+    source: str          # file path hoặc URL gốc
+    title: str           # tiêu đề tài liệu
+    doc_type: DocType    # "legal" | "news"  — theo MODULE_CONTRACTS.md
+    url: str | None      # URL công khai, None nếu là file local
 
 
 class ChunkMetadata(DocumentMetadata):
@@ -30,6 +51,10 @@ class Chunk(TypedDict):
 
 class EmbeddedChunk(Chunk):
     embedding: list[float]
+
+
+# Alias for compatibility with MODULE_CONTRACTS.md
+EmbeddedDocument = EmbeddedChunk
 
 
 class SearchResult(TypedDict):
@@ -58,15 +83,18 @@ def validate_document(item: object, *, require_chunk: bool = False) -> None:
     metadata = item.get("metadata")
     if not isinstance(metadata, dict):
         raise ValueError("document.metadata must be a dict")
-    for key in ("source", "title", "doc_type"):
+    for key in ("source", "title"):
         if not isinstance(metadata.get(key), str) or not metadata[key].strip():
             raise ValueError(f"metadata.{key} must be a non-empty string")
+    if metadata.get("doc_type") not in {"legal", "news"}:
+        raise ValueError('metadata.doc_type must be "legal" or "news"')
     if "url" not in metadata or not (
         metadata["url"] is None or isinstance(metadata["url"], str)
     ):
         raise ValueError("metadata.url must be a string or None")
     if require_chunk and (
-        not isinstance(metadata.get("chunk_index"), int)
+        isinstance(metadata.get("chunk_index"), bool)
+        or not isinstance(metadata.get("chunk_index"), int)
         or metadata["chunk_index"] < 0
     ):
         raise ValueError("metadata.chunk_index must be a non-negative integer")
