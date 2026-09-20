@@ -1,0 +1,45 @@
+# Individual contribution report
+
+## Thong tin
+
+- Ho va ten: Nguyen Khac Quang
+- Ma hoc vien: K4-L3A-QuangNK
+- Nhom: K4-L3A
+- Repository/branch: https://github.com/VanNahAI/K4-L3A-RAG-Pipeline-NhanCV- / main
+
+## Phan viec da thuc hien
+
+| Module/deliverable | Viec toi truc tiep lam | File/commit/PR | Trang thai |
+|---|---|---|---|
+| Thu thap tai lieu phap ly (Task 1) | Thu thap 3 tai lieu de an tuyen sinh chinh thuc (HUST 2026, NEU 2026, VinUni 2026) dang PDF/DOCX | data/landing/legal/, src/task1_collect_legal_docs.py | Done |
+| Chuan hoa sang Markdown (Task 3) | Chuyen doi PDF/DOCX thanh Markdown theo schema contracts.Document co id, content, metadata | src/task3_convert_markdown.py, data/standardized/legal/ | Done |
+| Chunking va Vector Indexing (Task 4) | Thiet ke chunk_documents (recursive 500 chars/50 overlap), embed_texts dung BAAI/bge-m3, index vao ChromaDB | src/task4_chunking_indexing.py | Done |
+| Semantic Search (Task 5) | Thuc hien semantic_search truy van ChromaDB bang embedding vector, tinh cosine similarity, sort giam dan | src/task5_semantic_search.py | Done |
+
+## Quyet dinh ky thuat quan trong
+
+1. **Quyet dinh:** Su dung mo hinh embedding da ngon ngu BAAI/bge-m3 voi chieu vector 1024-dim thay vi dung mo hinh co nho nhu all-MiniLM-L6-v2.
+   **Ly do/evidence:** Bo tai lieu tuyen sinh gom ca tieng Viet (HUST, NEU) va tieng Anh (VinUni). bge-m3 ho tro da ngon ngu tot nhat, do tuong dong cosine cho cac cau hoi in-domain tieng Viet dat trung binh 0.68.
+   **Trade-off:** Kich thuoc mo hinh lon hon va thoi gian sinh embedding ban dau lau hon tren CPU.
+
+2. **Quyet dinh:** Recursive Character Text Splitting voi chunk_size=500 va overlap=50, luu metadata nguon va chunk_index chi tiet.
+   **Ly do/evidence:** Kich thuoc 500 ky tu vua van cho 1-2 doan quy dinh hoac tieu chi xet tuyen, giup giam thieu nhieu thong tin ma van du ngu canh de mo hinh embedding hieu tron ven.
+   **Trade-off:** Cac bang bieu dai can xu ly ghep dong de tranh bi cat ngang giua cac hang.
+
+## Kiem thu va ket qua
+
+- Test hoac query toi da dung: pytest tests/test_contracts.py va tests/test_acceptance.py pass 100%. Cac file landing/legal deu vuot qua nguong kiem tra size > 1024 bytes va co day du 3 van ban phap ly.
+- Ket qua truoc/sau: Toan bo van ban PDF phuc tap deu duoc trich xuat va chuan hoa thanh Markdown doc duoc co metadata day du.
+- Loi da phat hien va cach xu ly: Xoa cac chunk cu trong ChromaDB truoc khi re-index de tranh du thua ID trung lap.
+
+## Dieu con han che
+
+- Mot han che cu the: OCR van ban dang bang trong PDF doi khi bi mat dinh dang cot neu PDF la file scan.
+- Neu co them thoi gian: Tich hop module chuyen doi bang bieu chuyen dung de giu nguyen cau truc bang Markdown.
+
+## Xac nhan dong gop
+
+Toi xac nhan noi dung tren phan anh dung phan viec cua minh va co the giai thich hoac chay lai trong buoi demo.
+
+- Ngay: 2026-09-20
+- Ten thanh vien: Nguyen Khac Quang

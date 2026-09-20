@@ -11,7 +11,7 @@
 | Embedding model                    | BAAI/bge-m3 (1024-dim, cosine space) |
 | Corpus version/commit              | c6e9115 (Head of main) |
 | Golden dataset size                | 15 Q&A pairs (13 in-domain, 2 out-of-domain) |
-| 	op_k                            | 5 |
+| top_k                              | 5 |
 | Fallback threshold and calibration | 0.30 (Calibrated on in-domain mean: 0.68 vs out-of-domain mean: 0.14) |
 
 ## Configurations
@@ -19,7 +19,7 @@
 - **Config A — dense-only:** Truy xuất dựa trên vector embedding (BAAI/bge-m3) qua ChromaDB, tính cosine similarity và lấy top-5 chunks có độ tương đồng cao nhất.
 - **Config B — hybrid + RRF:** Kết hợp dense semantic search (top-10) và BM25 lexical search (top-10). Hợp nhất danh sách bằng thuật toán Reciprocal Rank Fusion (RRF) với hằng số k=60 để sinh top-5 chunks, tích hợp cơ chế fallback dựa trên điểm cosine gốc (<0.30).
 
-Hai config phải dùng cùng golden dataset, generator, evaluator, prompt và 	op_k; chỉ thay retrieval strategy.
+Hai config phải dùng cùng golden dataset, generator, evaluator, prompt và top_k; chỉ thay retrieval strategy.
 
 ## Overall scores
 

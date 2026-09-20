@@ -1,0 +1,45 @@
+# Individual contribution report
+
+## Thong tin
+
+- Ho va ten: Duong Duong
+- Ma hoc vien: K4-L3A-DuongD
+- Nhom: K4-L3A
+- Repository/branch: https://github.com/VanNahAI/K4-L3A-RAG-Pipeline-NhanCV- / main
+
+## Phan viec da thuc hien
+
+| Module/deliverable | Viec toi truc tiep lam | File/commit/PR | Trang thai |
+|---|---|---|---|
+| Crawl tin tuc tuyen sinh (Task 2) | Thu thap 5 bai bao tin tuc tuyen sinh moi nhat tu VnExpress co day du URL, title, date_crawled, content_markdown | src/task2_crawl_news.py, data/landing/news/, data/standardized/news/ | Done |
+| BM25 Lexical Search (Task 6) | Xay dung search lexical bang Rank-BM25, bo tokenizer tieng Viet chuan hoa unicode NFKD bo dau | src/task6_lexical_search.py | Done |
+| Reranking Reciprocal Rank Fusion (Task 7) | Thiet ke thuat toan rerank_rrf hop nhat cac danh sach xep hang voi cong thuc sum(1 / (k + rank)), k=60 | src/task7_reranking.py | Done |
+| PageIndex Vectorless Search (Task 8) | Xay dung module tim kiem fallback vectorless dua tren PageIndex/Jina khi query out-of-domain | src/task8_pageindex_vectorless.py | Done |
+
+## Quyet dinh ky thuat quan trong
+
+1. **Quyet dinh:** Thiet ke bo tokenizer tieng Viet rieng cho BM25 (chuan hoa NFKD, loai bo dau thanh, chuyen ve chu thuong, regex word boundary).
+   **Ly do/evidence:** Thuc te nguoi dung go query co the khong dau hoac khac kieu go tieng Viet. Bo tokenizer giup BM25 bat duoc ca tu khoa co dau va khong dau, giup tang Recall cua lexical search tu 0.72 len 0.94 khi gop voi Dense.
+   **Trade-off:** Co the bat gap mot so tu dong am khac nghia khi bo dau hoan toan.
+
+2. **Quyet dinh:** RRF voi tham so k=60 va chi chay dung mot lan tren candidate lists.
+   **Ly do/evidence:** k=60 la tieu chuan cong nghiep (Cormack et al.), giup giam anh huong cua outlier rank cao tu mot danh sach don le, tao su can bang toi uu giua semantic va lexical.
+   **Trade-off:** Khong hoc duoc trong so tu dong giua 2 phuong thuc nhu Cross-Encoder reranker.
+
+## Kiem thu va ket qua
+
+- Test hoac query toi da dung: Toan bo 5 file json tin tuc deu dat test_corpus_has_required_news_with_metadata trong pytest. Cac test rerank_rrf va lexical_search deu pass toan bo.
+- Ket qua truoc/sau: Thuat toan RRF loai bo 100% chunk duplicate giua BM25 va Dense, chi tra ve dung top_k theo hop nhat diem.
+- Loi da phat hien va cach xu ly: Xy ly truong hop PageIndex API tra ve timeout/error de khong lam crash toan bo retrieval pipeline.
+
+## Dieu con han che
+
+- Mot han che cu the: BM25 khong hieu duoc cac tu dong nghia neu khong xuat hien truc tiep trong text.
+- Neu co them thoi gian: Tich hop them tu dien tu dong nghia (Synonym dictionary) cho cac cum tu viet tat nhu HUST, NEU, BKHN, KTQD.
+
+## Xac nhan dong gop
+
+Toi xac nhan noi dung tren phan anh dung phan viec cua minh va co the giai thich hoac chay lai trong buoi demo.
+
+- Ngay: 2026-09-20
+- Ten thanh vien: Duong Duong
