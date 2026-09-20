@@ -3,7 +3,7 @@
 ## Thong tin
 
 - Ho va ten: Chu Van Nhan
-- Ma hoc vien: K4-L3A-NhanCV
+- Ma hoc vien: 2A202602668 (K4-L3A-NhanCV)
 - Nhom: K4-L3A
 - Repository/branch: https://github.com/VanNahAI/K4-L3A-RAG-Pipeline-NhanCV- / main
 
